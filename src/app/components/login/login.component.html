@@ -1,0 +1,18 @@
+<h3> Log In </h3>
+
+<p *ngIf="loginErrorMessage" class="error">
+  {{ loginErrorMessage }}
+</p>
+
+<form (ngSubmit)="doLogin()">
+  <label for="email-input">Email </label>
+  <input id="email-input" type="text" placeholder="Your Email" [(ngModel)]="loginInfo.email" name="loginEmail">
+  <br>
+
+  <label for="password-input">Password </label>
+  <input id="password-input" type="password" placeholder="Your p*ssw*rd" [(ngModel)]="loginInfo.password" name="loginPassword">
+  <br>
+
+  <button> Log In </button>
+</form>
+<h5>Don't have account? <a [routerLink]="['/signup']">Sign Up Here</a></h5>
