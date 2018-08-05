@@ -7,12 +7,16 @@ import { HttpModule } from '../../node_modules/@angular/http';
 import { AppComponent } from './app.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
+import { AllNotesComponent } from './components/all-notes/all-notes.component';
+import { NewNoteComponent } from './components/new-note/new-note.component';
+import { NoteDetailsComponent } from './components/note-details/note-details.component';
 
 // routes:
 import {Routes, RouterModule} from '@angular/router';
 
 //services:
 import { AuthService } from './services/auth.service';
+import { NotesService } from './services/notes.service';
 
 //image upload
 import { FileUploadModule } from "ng2-file-upload";
@@ -25,6 +29,14 @@ const routes: Routes = [
     {
       path:'login',
       component:LoginComponent
+    },
+    {
+      path:'notes',
+      component: AllNotesComponent
+    },
+    {
+      path:'notes/:id',
+      component: NoteDetailsComponent
     }
 ]
 
@@ -32,7 +44,10 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    AllNotesComponent,
+    NewNoteComponent,
+    NoteDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +56,7 @@ const routes: Routes = [
     FileUploadModule,
     RouterModule.forRoot(routes), //connecting routes with the app  
   ],
-  providers: [AuthService],
+  providers: [AuthService, NotesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

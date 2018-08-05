@@ -9,6 +9,9 @@ import 'rxjs/add/operator/map';
 
 export class AuthService {
 
+  tempUser: any;
+  currentUser: any;
+
   constructor(private myHttp: Http ) { }
 
 signup(user){
@@ -26,16 +29,65 @@ signup(user){
 }
 
 login(data){
+  // console.log('data: ', data)
   return this.myHttp.post(`${environment.apiBase}/api/login`,
     {
-      loginEmail: data.username,
+      loginEmail: data.email,
       loginPassword: data.password
     },
     {
       withCredentials: true
     }
   )
-  .map(res => res.json())
+  .map(res => {
+    console.log('in service log: ', res)
+    res.json()})
 }
+
+checklogin() {
+  return (
+    this.myHttp
+      .get(
+        `${environment.apiBase}/api/loggedin`,
+
+        // Send the cookies across domains
+        { withCredentials: true }
+      )
+
+      // Convert from observable to promise
+      // .toPromise()
+
+      // Parse the JSON
+      .map(res => {
+
+        this.tempUser = res;
+        // this.currentUser = JSON.parse(this.tempUser._body)
+
+
+        // console.log('what: ', this.currentUser)
+        return JSON.parse(this.tempUser._body)
+      })
+  );
+} // close checklogin()
+
+logout() {
+  return (
+    this.myHttp
+      .post(
+        `${environment.apiBase}/api/logout`,
+        // Nothing to send to the back end (req.body)
+        {},
+        // Send the cookies across domains
+        { withCredentials: true }
+      )
+      // Convert from observable to promise
+      .toPromise()
+
+      // Parse the JSON
+      .then(res => res.json())
+  );
+} // close logout()
+
+
 
 }
