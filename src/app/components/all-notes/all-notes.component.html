@@ -1,0 +1,19 @@
+<div *ngIf="!theUser.username" >
+  Not logged in!
+</div>
+
+<div *ngIf="theUser.username" >
+Welcome, {{theUser.username}}!
+<button (click)="logMeOut()"> Log Out </button>
+<p *ngIf="logoutError">
+    {{ logoutError }}
+  </p>
+</div>
+
+
+
+<div>
+<ul *ngFor="let oneNote of allTheNotes">
+  <li><a [routerLink]="['/',oneNote._id]">{{ oneNote.title }}</a></li>
+</ul>
+</div>
