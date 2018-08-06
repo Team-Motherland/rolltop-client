@@ -14,9 +14,6 @@ export class NoteDetailsComponent implements OnInit {
     title: '', content: ''
   }
   
-  
-  // title:any = {};
-  // content:any = {};
   currentUser: any = {};
 
 
@@ -29,11 +26,9 @@ export class NoteDetailsComponent implements OnInit {
     this.myAuthService.checklogin()
     .toPromise()
     .then( res => {
-      // console.log('who: ', res);
       this.currentUser = res;
     })
     .catch(err => {
-      // console.log('err is: ', err);
       this.myRouter.navigate(['/notes']);
     })
     this.myRoute.params.subscribe(params => {
@@ -48,5 +43,22 @@ export class NoteDetailsComponent implements OnInit {
     })
     .catch( err => console.log('Error while getting details in the component: ', err));
   }
+
+  deleteThisNote(){
+  //   if (!confirm("Are you sure?")) {
+  //     return;
+  //   }
+  //   this.myNotesService
+  //     .deleteNote(this.note._id)
+  //     .then(() => {
+  //       console.log("Success");
+  //       this.myRouter.navigate(["/notes"]);
+  //     })
+  //     .catch(err => {
+  //       alert("Sorry! Something went wrong.");
+  //       console.log("Error while deleteing the note: ", err);
+  //     });
+  }
+
 
 }
