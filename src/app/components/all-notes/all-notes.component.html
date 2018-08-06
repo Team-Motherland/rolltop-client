@@ -4,11 +4,14 @@
 
 <div *ngIf="theUser.username" >
 Welcome, {{theUser.username}}!
+<br>
 <button (click)="logMeOut()"> Log Out </button>
 <p *ngIf="logoutError">
     {{ logoutError }}
   </p>
 </div>
+
+<h5>Create new note<a [routerLink]="['/notes/new']">Click Here</a></h5>
 
 
 

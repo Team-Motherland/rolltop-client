@@ -54,17 +54,10 @@ checklogin() {
         { withCredentials: true }
       )
 
-      // Convert from observable to promise
-      // .toPromise()
-
       // Parse the JSON
       .map(res => {
 
         this.tempUser = res;
-        // this.currentUser = JSON.parse(this.tempUser._body)
-
-
-        // console.log('what: ', this.currentUser)
         return JSON.parse(this.tempUser._body)
       })
   );
