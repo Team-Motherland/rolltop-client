@@ -1,3 +1,14 @@
-<p>
-  note-details works!
-</p>
+<div>
+    Logged in as {{currentUser.username}} 
+</div>
+  
+  
+  <div>
+    <h3>{{note.title}}</h3> 
+    <hr>
+    <p>{{note.content}}</p>
+  </div>
+  
+  
+  <a [routerLink]="['/notes']">Go back to the list of notes</a>
+  <hr>

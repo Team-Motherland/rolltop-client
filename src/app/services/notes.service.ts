@@ -21,9 +21,9 @@ export class NotesService {
   }
 
   createNewNote(dataToSend){
-    return this.myHttp.post(`${environment.apiBase}/api/notes`, { withCredentials: true }, dataToSend)
+    return this.myHttp.post(`${environment.apiBase}/api/notes`,  dataToSend, { withCredentials: true })
     .toPromise()
     .then( res => res.json() )
-    .catch( err => console.log('Error while creating new entry: ', err) )
+    .catch( err => console.log('Error while creating new note: ', err) )
   }
 }
