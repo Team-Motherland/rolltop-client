@@ -11,7 +11,9 @@ export class SignupComponent implements OnInit {
 
   signUpInfo = {
     username: "",
-    password: ""
+    email: "",
+    password: "",
+    checkedPassword: ""
   };
 
   errorMessage: string;
@@ -23,14 +25,14 @@ export class SignupComponent implements OnInit {
   }
 
   doSignUp() {
+    console.log("comp ts: ",this.signUpInfo)
     this.myAuth
-    
     .signup(this.signUpInfo)
     .toPromise()
     .then(resultFromApi => {
       // console.log('info:', this.signUpInfo)
         // clear form
-        this.signUpInfo = { username: "", password: "" };
+        this.signUpInfo = { username: "", email: "", password: "", checkedPassword: "" };
 
         // clear error message
         this.errorMessage = "";
@@ -40,7 +42,7 @@ export class SignupComponent implements OnInit {
       })
       .catch(err => {
         const parsedError = err.json();
-        this.errorMessage = parsedError.message + "=[";
+        this.errorMessage = parsedError.message + " =/";
       });
   } // close doSignUp()
 
