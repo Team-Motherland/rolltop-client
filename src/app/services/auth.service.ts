@@ -18,8 +18,9 @@ signup(user){
   return this.myHttp.post(`${environment.apiBase}/api/signup`,
   {
     signUpUsername: user.username,
-    signUpEmail: user.username,
-    signUpPassword: user.password
+    signUpEmail: user.email,
+    signUpPassword: user.password,
+    signUpCheckedPassword: user.checkedPassword
   },
   {
     withCredentials: true

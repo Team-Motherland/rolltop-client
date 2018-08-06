@@ -11,12 +11,11 @@ Welcome, {{theUser.username}}!
   </p>
 </div>
 
-<h5>Create new note<a [routerLink]="['/notes/new']">Click Here</a></h5>
-
+<h5>Create new note<a [routerLink]="['/notes/new']"> Click Here</a></h5>
 
 
 <div>
 <ul *ngFor="let oneNote of allTheNotes">
-  <li><a [routerLink]="['/',oneNote._id]">{{ oneNote.title }}</a></li>
+  <li><a [routerLink]="['/notes',oneNote._id]">{{ oneNote.title }}</a></li>
 </ul>
 </div>

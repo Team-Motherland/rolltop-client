@@ -12,9 +12,12 @@ import { DesktopComponent } from './components/desktop/desktop.component';
 import { AllNotesComponent } from './components/all-notes/all-notes.component';
 import { NewNoteComponent } from './components/new-note/new-note.component';
 import { NoteDetailsComponent } from './components/note-details/note-details.component';
+
 //(JM Added components)
 import { ToDoMainComponent } from './components/toDoApplet/to-do-main/to-do-main.component';
 import { NewProjectComponent } from './components/toDoApplet/new-project/new-project.component';
+
+import { QuoteComponent } from './components/quote/quote.component';
 
 
 // routes:
@@ -23,6 +26,7 @@ import {Routes, RouterModule} from '@angular/router';
 //services:
 import { AuthService } from './services/auth.service';
 import { NotesService } from './services/notes.service';
+import { QuoteService } from './services/quote.service';
 
 //image upload
 import { FileUploadModule } from "ng2-file-upload";
@@ -73,11 +77,11 @@ const routes: Routes = [
     NoteDetailsComponent,
     TitleComponent,
     DesktopComponent,
-    ToDoMainComponent,
-    NewProjectComponent, 
     // ToDo components after this
     ToDoMainComponent,
-    NewProjectComponent
+    NewProjectComponent,
+    //End ToDo component 
+    QuoteComponent
   ],
   imports: [
     BrowserModule,
@@ -86,7 +90,7 @@ const routes: Routes = [
     FileUploadModule,
     RouterModule.forRoot(routes), //connecting routes with the app  
   ],
-  providers: [AuthService, NotesService],
+  providers: [AuthService, NotesService, QuoteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
