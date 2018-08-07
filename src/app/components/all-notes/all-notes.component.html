@@ -3,7 +3,7 @@
 </div>
 
 <div *ngIf="theUser.username" >
-Welcome, {{theUser.username}}!
+{{theUser.username}}'s Notes
 <br>
 <button (click)="logMeOut()"> Log Out </button>
 <p *ngIf="logoutError">
@@ -11,7 +11,7 @@ Welcome, {{theUser.username}}!
   </p>
 </div>
 
-<h5>Create new note<a [routerLink]="['/notes/new']"> Click Here</a></h5>
+<h5 *ngIf="theUser.username">Create new note<a [routerLink]="['/notes/new']"> Click Here</a></h5>
 
 
 <div>
