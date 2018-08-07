@@ -12,9 +12,15 @@ import { DesktopComponent } from './components/desktop/desktop.component';
 import { AllNotesComponent } from './components/all-notes/all-notes.component';
 import { NewNoteComponent } from './components/new-note/new-note.component';
 import { NoteDetailsComponent } from './components/note-details/note-details.component';
+
+//(JM Added components)
+import { ToDoMainComponent } from './components/toDoApplet/to-do-main/to-do-main.component';
+import { NewProjectComponent } from './components/toDoApplet/new-project/new-project.component';
+
 import { QuoteComponent } from './components/quote/quote.component';
 import { FavplacesComponent } from './components/favplaces/favplaces.component';
 import { PlaceDetailsComponent } from './components/place-details/place-details.component';
+
 
 // routes:
 import {Routes, RouterModule} from '@angular/router';
@@ -59,6 +65,7 @@ const routes: Routes = [
       path:'notes/:id',
       component: NoteDetailsComponent
     },
+
     {
       path:'places',
       component: FavplacesComponent
@@ -70,6 +77,10 @@ const routes: Routes = [
     {
       path:'places/:id',
       component: PlaceDetailsComponent
+    }, 
+    {
+      path:'todo',
+      component: ToDoMainComponent
     }
 ]
 
@@ -87,7 +98,12 @@ const routes: Routes = [
     FavplacesComponent,
     NewPlaceComponent,
     PlaceDetailsComponent,
+<<<<<<< HEAD
     NavbarComponent
+=======
+    ToDoMainComponent,
+    NewProjectComponent
+>>>>>>> 43318869eb6e7255c87f675c3ff0935bc94791bf
   ],
   imports: [
     BrowserModule,

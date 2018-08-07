@@ -1,0 +1,23 @@
+<form  (submit)="saveNewProject()">
+  <h3>Add a New Project</h3>
+
+  <label>Title</label>
+  <input [(ngModel)]="newProject.title" name="title" type="text">
+
+  <br>
+
+  <label>Description</label>
+  <textarea  [(ngModel)]="newProject.description" name="title" cols="30" rows="10"></textarea>
+
+<button>Submit</button>
+
+</form>
+
+<h3> List of Projects </h3>
+<div *ngFor="let project of projectList">
+
+  <h3>{{project.title}}</h3>
+  <p>{{project.description}}</p>
+  <!-- <a [routerLink]="['entries', oneEntry._id]">See Details</a> -->
+
+</div>
