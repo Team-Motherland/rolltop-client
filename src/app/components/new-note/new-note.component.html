@@ -1,10 +1,13 @@
+<app-all-notes></app-all-notes>
+
 <form (ngSubmit)="saveNewNote()" >
    <h3>Add a New Note</h3>
   <label for="">Title:</label>
-  <input type="text" name="title" id="" [(ngModel)]="noteData.title">
+  <input type="text" name="title" id="note-title-input" [(ngModel)]="noteData.title">
   <br>
   <label for="">Content:</label>
-  <textarea name="content" id="" cols="100" rows="20" [(ngModel)]="noteData.content"></textarea>
+  <br>
+  <textarea name="content" id="note-content-input" cols="100" rows="20" [(ngModel)]="noteData.content"></textarea>
   <br>
 
   <button>Save</button>

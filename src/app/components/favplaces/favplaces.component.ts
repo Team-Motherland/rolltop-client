@@ -1,22 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { NotesService } from '../../services/notes.service';
+import { PlacesService } from '../../services/places.service';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '../../../../node_modules/@angular/router';
 
 @Component({
-  selector: 'app-all-notes',
-  templateUrl: './all-notes.component.html',
-  styleUrls: ['./all-notes.component.css']
+  selector: 'app-favplaces',
+  templateUrl: './favplaces.component.html',
+  styleUrls: ['./favplaces.component.css']
 })
-export class AllNotesComponent implements OnInit {
+export class FavplacesComponent implements OnInit {
 
-  allTheNotes: Array<Object> = [];
+  allThePlaces: Array<Object> = [];
   listError: String = '';
   logoutError: String = '';
   theUser: any = {};
 
 
-  constructor( private myNotesService: NotesService,
+  constructor( private myPlacesService: PlacesService,
                private myAuthService: AuthService,
                private myRouter: Router) { }
 
@@ -24,19 +24,23 @@ export class AllNotesComponent implements OnInit {
     this.myAuthService.checklogin()
     .toPromise()
     .then( resFromDB => {
-      console.log('user in notes: ', resFromDB)
+      console.log('user in places: ', resFromDB)
       this.theUser = resFromDB;
     } )
-    this.showNoteList();
+    this.showPlaceList();
   }
 
 
-  showNoteList(){
-    this.myNotesService.getAllNotes()
-    .subscribe( allNotes => {
-      this.allTheNotes = allNotes;
+  showPlaceList(){
+    const dineCat: any =[];
+    const serviceCat: any =[];
+    const retailCat: any =[];
+    const privateCat: any =[];
+    this.myPlacesService.getAllPlaces()
+    .subscribe( allPlaces => {
+      this.allThePlaces = allPlaces;
     },
-    () => this.listError = 'Sorry! No notes! Something went bad on the backend route!')
+    () => this.listError = 'Sorry! No fav places! Something went bad on the backend route!')
   }
 
 
@@ -50,5 +54,7 @@ export class AllNotesComponent implements OnInit {
         this.logoutError = "Log out went bad.";
       });
   } // close logMeOut()
+
+
 
 }

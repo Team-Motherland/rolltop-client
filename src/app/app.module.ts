@@ -18,6 +18,8 @@ import { ToDoMainComponent } from './components/toDoApplet/to-do-main/to-do-main
 import { NewProjectComponent } from './components/toDoApplet/new-project/new-project.component';
 
 import { QuoteComponent } from './components/quote/quote.component';
+import { FavplacesComponent } from './components/favplaces/favplaces.component';
+import { PlaceDetailsComponent } from './components/place-details/place-details.component';
 
 
 // routes:
@@ -27,9 +29,11 @@ import {Routes, RouterModule} from '@angular/router';
 import { AuthService } from './services/auth.service';
 import { NotesService } from './services/notes.service';
 import { QuoteService } from './services/quote.service';
+import { PlacesService } from './services/places.service';
 
 //image upload
 import { FileUploadModule } from "ng2-file-upload";
+import { NewPlaceComponent } from './components/new-place/new-place.component';
 
 const routes: Routes = [
     {
@@ -60,7 +64,19 @@ const routes: Routes = [
       path:'notes/:id',
       component: NoteDetailsComponent
     },
-    // (JM) ToDo List Main App Route 
+
+    {
+      path:'places',
+      component: FavplacesComponent
+    },
+    {
+      path:'places/new',
+      component: NewPlaceComponent
+    },
+    {
+      path:'places/:id',
+      component: PlaceDetailsComponent
+    }, 
     {
       path:'todo',
       component: ToDoMainComponent
@@ -77,11 +93,12 @@ const routes: Routes = [
     NoteDetailsComponent,
     TitleComponent,
     DesktopComponent,
-    // ToDo components after this
+    QuoteComponent,
+    FavplacesComponent,
+    NewPlaceComponent,
+    PlaceDetailsComponent,
     ToDoMainComponent,
-    NewProjectComponent,
-    //End ToDo component 
-    QuoteComponent
+    NewProjectComponent
   ],
   imports: [
     BrowserModule,
@@ -90,7 +107,10 @@ const routes: Routes = [
     FileUploadModule,
     RouterModule.forRoot(routes), //connecting routes with the app  
   ],
-  providers: [AuthService, NotesService, QuoteService],
+  providers: [AuthService, 
+              NotesService, 
+              QuoteService,
+              PlacesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,21 @@
+<div *ngIf="!theUser.username" >
+    Not logged in!
+  </div>
+  
+  <div *ngIf="theUser.username" >
+  {{theUser.username}}'s Fav Places
+  <br>
+  <button (click)="logMeOut()"> Log Out </button>
+  <p *ngIf="logoutError">
+      {{ logoutError }}
+    </p>
+  </div>
+  
+  <h5 *ngIf="theUser.username">Create a new fav place entry<a [routerLink]="['/places/new']"> Click Here</a></h5>
+  
+  
+  <div>
+  <ul *ngFor="let onePlace of allThePlaces">
+    <li><a [routerLink]="['/places',onePlace._id]">{{ onePlace.name }}  </a>|| {{ onePlace.category }}</li>
+  </ul>
+  </div>

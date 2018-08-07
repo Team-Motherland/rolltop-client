@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
         this.loginErrorMessage = "";
   
         // redirect to /phones
-        this.myRouter.navigate(['/notes']);
+        this.myRouter.navigate(['/desktop']);
       })
       .catch( err => {
         const parsedError = err.json();

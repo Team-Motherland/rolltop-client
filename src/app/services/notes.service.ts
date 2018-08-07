@@ -26,4 +26,16 @@ export class NotesService {
     .then( res => res.json() )
     .catch( err => console.log('Error while creating new note: ', err) )
   }
+
+  updateNote(id, updates){
+    return this.myHttp.post(`${environment.apiBase}/api/notes/${id}/update`, updates, { withCredentials: true })
+    .map(res => res.json());
+  }
+
+  deleteNote(id){
+    return this.myHttp.post(`${environment.apiBase}/api/notes/${id}/delete`, {},
+        { withCredentials: true })
+        .toPromise()
+  }
+
 }
