@@ -20,6 +20,8 @@ import { NewProjectComponent } from './components/toDoApplet/new-project/new-pro
 import { QuoteComponent } from './components/quote/quote.component';
 import { FavplacesComponent } from './components/favplaces/favplaces.component';
 import { PlaceDetailsComponent } from './components/place-details/place-details.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { NewPlaceComponent } from './components/new-place/new-place.component';
 
 
 // routes:
@@ -33,8 +35,6 @@ import { PlacesService } from './services/places.service';
 
 //image upload
 import { FileUploadModule } from "ng2-file-upload";
-import { NewPlaceComponent } from './components/new-place/new-place.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 
 const routes: Routes = [
     {
@@ -98,12 +98,10 @@ const routes: Routes = [
     FavplacesComponent,
     NewPlaceComponent,
     PlaceDetailsComponent,
-<<<<<<< HEAD
-    NavbarComponent
-=======
+    NavbarComponent,
     ToDoMainComponent,
     NewProjectComponent
->>>>>>> 43318869eb6e7255c87f675c3ff0935bc94791bf
+
   ],
   imports: [
     BrowserModule,

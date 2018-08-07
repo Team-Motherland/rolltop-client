@@ -48,16 +48,16 @@ export class FavplacesComponent implements OnInit {
   }
 
 
-  logMeOut() {
-    this.myAuthService
-      .logout()
-      .then(() => {
-        this.myRouter.navigate(["/"]);
-      })
-      .catch(() => {
-        this.logoutError = "Log out went bad.";
-      });
-  } // close logMeOut()
+  // logMeOut() {
+  //   this.myAuthService
+  //     .logout()
+  //     .then(() => {
+  //       this.myRouter.navigate(["/"]);
+  //     })
+  //     .catch(() => {
+  //       this.logoutError = "Log out went bad.";
+  //     });
+  // } // close logMeOut()
 
 
 
