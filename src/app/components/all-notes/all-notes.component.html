@@ -11,13 +11,16 @@
   </p>
 </div> -->
 
+<div *ngIf="theUser.username" class="page-content">
+
 <h3>Your Notes</h3>
+<h5>Create new note<a [routerLink]="['/notes/new']"> Click Here</a></h5>
 
-<h5 *ngIf="theUser.username">Create new note<a [routerLink]="['/notes/new']"> Click Here</a></h5>
 
-
-<div>
+<div class="all-notes">
 <ul *ngFor="let oneNote of allTheNotes">
   <li><a [routerLink]="['/notes',oneNote._id]">{{ oneNote.title }}</a></li>
 </ul>
 </div>
+
+</div> 

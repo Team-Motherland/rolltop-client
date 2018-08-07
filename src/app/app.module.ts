@@ -24,6 +24,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { NewPlaceComponent } from './components/new-place/new-place.component';
 
 
+
 // routes:
 import {Routes, RouterModule} from '@angular/router';
 
@@ -98,10 +99,19 @@ const routes: Routes = [
     FavplacesComponent,
     NewPlaceComponent,
     PlaceDetailsComponent,
+<<<<<<< Updated upstream
     NavbarComponent,
     ToDoMainComponent,
     NewProjectComponent
 
+=======
+<<<<<<< HEAD
+    NavbarComponent
+=======
+    ToDoMainComponent,
+    NewProjectComponent
+>>>>>>> e4114eaadfed9e62e8a6c5b322ddd59cab24ff6c
+>>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,

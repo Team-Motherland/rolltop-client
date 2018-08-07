@@ -1,21 +1,32 @@
 
-<nav>
-<div *ngIf="!theUser.username" >
-        Not logged in!
+<nav *ngIf="theUser.username">
+  <div class="nav-wrapper">
+
+  <div *ngIf="theUser.username">
+      Logged in as {{theUser.username}} 
+      <button (click)="logMeOut()">Log Out </button>
+      <p *ngIf="logoutError">
+          {{ logoutError }}
+      </p>
+  </div> 
+      <a [routerLink]="['/desktop']" class="brand-logo">Your Desktop</a>
+      <ul *ngIf="theUser.username" id="nav-mobile" class="right hide-on-med-and-down">
+        
+        <li><a [routerLink]="['/notes']">Your Notes</a></li>
+        <li><a [routerLink]="['/places']">Your Places</a></li>
+        <li><a [routerLink]="['/projects']">Your Projects</a></li>
+        
+    </ul>
+  </div> <!--- end of nav-wrapper div -->
+</nav>
+
+
+
+<nav *ngIf="!theUser.username">
+    <div  class="nav-wrapper">
+        <p>Not logged in!</p> 
         <a [routerLink]="['/login']">Log In</a>
         <a [routerLink]="['/signup']">Sign Up</a>
-</div>
-<div *ngIf="theUser.username">
-    Logged in as {{theUser.username}} 
-    <button (click)="logMeOut()">Log Out </button>
-    <p *ngIf="logoutError">
-        {{ logoutError }}
-    </p>
-</div>
-<div *ngIf="theUser.username">
-<a [routerLink]="['/desktop']">Your Desktop</a>
-<a [routerLink]="['/notes']">Your Notes</a>
-<a [routerLink]="['/places']">Your Places</a>
-<a [routerLink]="['/projects']">Your Projects</a>
-</div>
+
+    </div>
 </nav>

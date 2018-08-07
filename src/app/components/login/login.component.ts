@@ -51,6 +51,7 @@ export class LoginComponent implements OnInit {
   
         // redirect to /phones
         this.myRouter.navigate(['/desktop']);
+        location.reload();
       })
       .catch( err => {
         const parsedError = err.json();
