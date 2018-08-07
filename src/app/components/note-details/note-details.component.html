@@ -1,9 +1,9 @@
-<div>
+<!-- <div>
     Logged in as {{currentUser.username}} 
 </div>
 <br>
 <button (click)="logMeOut()">Log Out </button>
-  
+   -->
   
   <div [hidden]="!show">
     <h3>{{note.title}}</h3> 
@@ -27,4 +27,5 @@
     <textarea id="note-content-input" cols="100" rows="20" type="text"  [(ngModel)]="note.content" name="content" value="{{ note.content }}"></textarea>
     <br>
     <button>Save updates</button>
+    
 </form> 

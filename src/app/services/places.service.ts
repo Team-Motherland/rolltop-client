@@ -27,6 +27,11 @@ export class PlacesService {
     .catch( err => console.log('Error while creating new place entry: ', err) )
   }
 
+ updatePlace(id, updates){
+    return this.myHttp.post(`${environment.apiBase}/api/places/${id}/update`, updates, { withCredentials: true })
+    .map(res => res.json());
+  }
+
   deletePlace(id){
     return this.myHttp.post(`${environment.apiBase}/api/places/${id}/delete`, {},
         { withCredentials: true })

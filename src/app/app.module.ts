@@ -20,6 +20,9 @@ import { NewProjectComponent } from './components/toDoApplet/new-project/new-pro
 import { QuoteComponent } from './components/quote/quote.component';
 import { FavplacesComponent } from './components/favplaces/favplaces.component';
 import { PlaceDetailsComponent } from './components/place-details/place-details.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { NewPlaceComponent } from './components/new-place/new-place.component';
+
 
 
 // routes:
@@ -33,7 +36,6 @@ import { PlacesService } from './services/places.service';
 
 //image upload
 import { FileUploadModule } from "ng2-file-upload";
-import { NewPlaceComponent } from './components/new-place/new-place.component';
 
 const routes: Routes = [
     {
@@ -97,8 +99,19 @@ const routes: Routes = [
     FavplacesComponent,
     NewPlaceComponent,
     PlaceDetailsComponent,
+<<<<<<< Updated upstream
+    NavbarComponent,
     ToDoMainComponent,
     NewProjectComponent
+
+=======
+<<<<<<< HEAD
+    NavbarComponent
+=======
+    ToDoMainComponent,
+    NewProjectComponent
+>>>>>>> e4114eaadfed9e62e8a6c5b322ddd59cab24ff6c
+>>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,

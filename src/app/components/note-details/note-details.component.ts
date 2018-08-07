@@ -32,7 +32,7 @@ export class NoteDetailsComponent implements OnInit {
       this.currentUser = res;
     })
     .catch(err => {
-      this.myRouter.navigate(['/notes']);
+      this.myRouter.navigate(['/login']);
     })
     this.myRoute.params.subscribe(params => {
       this.showOneNoteDetails(params["id"]);
@@ -44,7 +44,7 @@ export class NoteDetailsComponent implements OnInit {
     .then( oneNote => {
       this.note = oneNote;
     })
-    .catch( err => console.log('Error while getting details in the component: ', err));
+    .catch( err => console.log('Error while getting details in the note component: ', err));
   }
 
   doNoteUpdate(id, formData) {
@@ -58,12 +58,14 @@ export class NoteDetailsComponent implements OnInit {
   }
 
   sendUpdatesToApi(id) {
+  
     this.updatedNote = {title: this.note.title, content: this.note.content};
     console.log("updates:", this.updatedNote)
     this.myNotesService.updateNote(id, this.updatedNote)
       .toPromise()
       .then(()=>{
         console.log("Note updated!");
+        // location.reload();
         this.myRouter.navigate(['/notes'])
       })
       .catch(err => {

@@ -1,4 +1,4 @@
-<div *ngIf="!theUser.username" >
+<!-- <div *ngIf="!theUser.username" >
     Not logged in!
   </div>
   
@@ -9,13 +9,18 @@
   <p *ngIf="logoutError">
       {{ logoutError }}
     </p>
-  </div>
+  </div> -->
   
   <h5 *ngIf="theUser.username">Create a new fav place entry<a [routerLink]="['/places/new']"> Click Here</a></h5>
   
   
   <div>
   <ul *ngFor="let onePlace of allThePlaces">
+    <!-- <div *ngIf="onePlace.category==='retail'">
+        <ul *ngFor="let oneItem of dineCat">
+          <li><a [routerLink]="['/places',onePlace._id]">{{ onePlace.name }}  </a></li>
+        </ul>
+    </div> -->
     <li><a [routerLink]="['/places',onePlace._id]">{{ onePlace.name }}  </a>|| {{ onePlace.category }}</li>
   </ul>
   </div>
