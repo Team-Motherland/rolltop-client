@@ -1,0 +1,21 @@
+
+<nav>
+<div *ngIf="!theUser.username" >
+        Not logged in!
+        <a [routerLink]="['/login']">Log In</a>
+        <a [routerLink]="['/signup']">Sign Up</a>
+</div>
+<div *ngIf="theUser.username">
+    Logged in as {{theUser.username}} 
+    <button (click)="logMeOut()">Log Out </button>
+    <p *ngIf="logoutError">
+        {{ logoutError }}
+    </p>
+</div>
+<div *ngIf="theUser.username">
+<a [routerLink]="['/desktop']">Your Desktop</a>
+<a [routerLink]="['/notes']">Your Notes</a>
+<a [routerLink]="['/places']">Your Places</a>
+<a [routerLink]="['/projects']">Your Projects</a>
+</div>
+</nav>

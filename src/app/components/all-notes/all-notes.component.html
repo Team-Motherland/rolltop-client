@@ -1,4 +1,4 @@
-<div *ngIf="!theUser.username" >
+<!-- <div *ngIf="!theUser.username" >
   Not logged in!
 </div>
 
@@ -9,7 +9,9 @@
 <p *ngIf="logoutError">
     {{ logoutError }}
   </p>
-</div>
+</div> -->
+
+<h3>Your Notes</h3>
 
 <h5 *ngIf="theUser.username">Create new note<a [routerLink]="['/notes/new']"> Click Here</a></h5>
 

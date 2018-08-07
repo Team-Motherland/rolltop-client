@@ -28,7 +28,7 @@ export class NotesService {
   }
 
   updateNote(id, updates){
-    return this.myHttp.post(`${environment.apiBase}/api/notes/${id}/update`, updates, { withCredentials: true })
+    return this.myHttp.post(`${environment.apiBase}/api/place/${id}/update`, updates, { withCredentials: true })
     .map(res => res.json());
   }
 

@@ -28,6 +28,7 @@ import { PlacesService } from './services/places.service';
 //image upload
 import { FileUploadModule } from "ng2-file-upload";
 import { NewPlaceComponent } from './components/new-place/new-place.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 const routes: Routes = [
     {
@@ -85,7 +86,8 @@ const routes: Routes = [
     QuoteComponent,
     FavplacesComponent,
     NewPlaceComponent,
-    PlaceDetailsComponent
+    PlaceDetailsComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
