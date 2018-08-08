@@ -1,0 +1,11 @@
+<h2>{{project.title}}</h2>
+<p>{{project.description}}</p>
+<p> Done: {{project.closed}}</p>
+
+<app-edit-project> </app-edit-project>
+
+<br>
+
+<button (click) = "deleteProject(project._id)"> Delete Project </button>
+
+<app-show-tasks> </app-show-tasks>

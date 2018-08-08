@@ -32,10 +32,22 @@ import {Routes, RouterModule} from '@angular/router';
 import { AuthService } from './services/auth.service';
 import { NotesService } from './services/notes.service';
 import { QuoteService } from './services/quote.service';
+
+import { PastebinService } from './services/pastebin.service';
+import { HttpClientModule, HttpClient } from '@angular/common/http'
 import { PlacesService } from './services/places.service';
+
 
 //image upload
 import { FileUploadModule } from "ng2-file-upload";
+import { TodoService } from './services/todo.service';
+import { ShowProjectsComponent } from './components/toDoApplet/show-projects/show-projects.component';
+import { ShowProjectInfoComponent } from './components/toDoApplet/show-project-info/show-project-info.component';
+import { EditProjectComponent } from './components/toDoApplet/edit-project/edit-project.component';
+import { ShowTasksComponent } from './components/toDoApplet/show-tasks/show-tasks.component';
+import { AddTaskComponent } from './components/toDoApplet/add-task/add-task.component';
+import { EditTaskComponent } from './components/toDoApplet/edit-task/edit-task.component';
+import { PastebinComponent } from './components/pastebin/pastebin.component';
 
 const routes: Routes = [
     {
@@ -82,6 +94,14 @@ const routes: Routes = [
     {
       path:'todo',
       component: ToDoMainComponent
+    },
+    {
+      path: 'todo/:id',
+      component: ShowProjectInfoComponent
+    },
+    {
+      path: 'pastebin',
+      component: PastebinComponent
     }
 ]
 
@@ -102,6 +122,15 @@ const routes: Routes = [
     NavbarComponent,
     ToDoMainComponent,
     NewProjectComponent,
+    //End ToDo component 
+    QuoteComponent,
+    ShowProjectsComponent,
+    ShowProjectInfoComponent,
+    EditProjectComponent,
+    ShowTasksComponent,
+    AddTaskComponent,
+    EditTaskComponent,
+    PastebinComponent
     NavbarComponent,
     ToDoMainComponent,
     NewProjectComponent
@@ -112,11 +141,17 @@ const routes: Routes = [
     HttpModule,
     FileUploadModule,
     RouterModule.forRoot(routes), //connecting routes with the app  
+    BrowserModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [AuthService, 
-              NotesService, 
-              QuoteService,
-              PlacesService],
+
+  providers: [AuthService,
+                NotesService, 
+                QuoteService, 
+                TodoService, 
+                 PlaceServices,
+                 PastebinService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
