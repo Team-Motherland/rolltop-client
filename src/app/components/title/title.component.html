@@ -1,5 +1,12 @@
-<h2>Welcome to Rolltop Desk!</h2>
+<div class="container-fluid" id="allPage">
+<div class="landing">
+    <h2>Welcome to</h2>
+    <h1>Rolltop Desk</h1>
+    <div class="row welcome-route">
+       <div class="col-sm-6"><h5>Don't have an account?</h5> <a [routerLink]="['/signup']">Sign Up Here</a></div>
+       <div class="col-sm-6"><h5>Already have an account? </h5> <a [routerLink]="['/login']">Log In</a></div>
+    </div>  <!-- end of welcome-route div -->
+</div> <!-- end of landing div-->
+</div> <!-- end of allPage div-->
 
-<h5>Don't have account? <a [routerLink]="['/signup']">Sign Up Here</a></h5>
-<h5>Already have an account? <a [routerLink]="['/login']">Log In</a> </h5>
- 
+

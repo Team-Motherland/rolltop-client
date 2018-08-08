@@ -1,26 +1,27 @@
-<!-- <div *ngIf="!theUser.username" >
-  Not logged in!
-</div>
 
-<div *ngIf="theUser.username" >
-{{theUser.username}}'s Notes
-<br>
-<button (click)="logMeOut()"> Log Out </button>
-<p *ngIf="logoutError">
-    {{ logoutError }}
-  </p>
-</div> -->
+<div *ngIf="theUser.username" class="allPage">
 
-<div *ngIf="theUser.username" class="page-content">
+  <div id="pageView">
+    
+    <div class="row">
+      <h3>Your Notes</h3>
+    </div>
+    <div class="row">
+      <h5>Create new note<button (click)="showForm()"> Click Here</button></h5>
+    </div>
 
-<h3>Your Notes</h3>
-<h5>Create new note<a [routerLink]="['/notes/new']"> Click Here</a></h5>
+    <div class="row mainContent">
+      <div class="col-sm-3 all-notes">
+        <ul *ngFor="let oneNote of allTheNotes">
+          <li><a [routerLink]="['/notes',oneNote._id]">{{ oneNote.title }}</a></li>
+        </ul>
+      </div>
+      <div [hidden]="!show">
+          <app-new-note></app-new-note>
+      </div>
 
+    </div> <!-- end of mainContent div-->
+  
+  </div>  <!-- end of pageView div-->
 
-<div class="all-notes">
-<ul *ngFor="let oneNote of allTheNotes">
-  <li><a [routerLink]="['/notes',oneNote._id]">{{ oneNote.title }}</a></li>
-</ul>
-</div>
-
-</div> 
+</div> <!-- end of allPage div-->

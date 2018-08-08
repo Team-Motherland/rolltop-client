@@ -99,19 +99,12 @@ const routes: Routes = [
     FavplacesComponent,
     NewPlaceComponent,
     PlaceDetailsComponent,
-<<<<<<< Updated upstream
+    NavbarComponent,
+    ToDoMainComponent,
+    NewProjectComponent,
     NavbarComponent,
     ToDoMainComponent,
     NewProjectComponent
-
-=======
-<<<<<<< HEAD
-    NavbarComponent
-=======
-    ToDoMainComponent,
-    NewProjectComponent
->>>>>>> e4114eaadfed9e62e8a6c5b322ddd59cab24ff6c
->>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,
