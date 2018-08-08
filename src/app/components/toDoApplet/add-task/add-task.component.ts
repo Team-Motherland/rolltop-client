@@ -11,9 +11,9 @@ import { AuthService } from '../../../services/auth.service';
 export class AddTaskComponent implements OnInit {
 
   newTask = {
-    action: String,
-    dueTime: Array,
-    orderNumber: String
+    action: "",
+    dueTime: "",
+    orderNumber: ""
   }
 
   project;

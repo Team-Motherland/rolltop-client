@@ -18,6 +18,7 @@ export class ShowProjectInfoComponent implements OnInit {
 
   listError: String = '';
   id:Number = 0;
+  show: boolean = false;
 
   constructor(private myTodoService: TodoService,
     private myRouter: Router,
@@ -52,5 +53,9 @@ export class ShowProjectInfoComponent implements OnInit {
 
   loadTasksToService(){
     this.myTodoService.loadTasks(this.project);
+  }
+
+  showForm() {
+    this.show=!this.show;
   }
 }

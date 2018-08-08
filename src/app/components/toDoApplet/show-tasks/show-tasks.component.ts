@@ -12,6 +12,8 @@ export class ShowTasksComponent implements OnInit {
 
   id:Number;
   listError: String = '';
+  show: boolean = false;
+  showEditTask: boolean = false;
   //project = {};
 
   projectTasks: Array<any>;
@@ -42,6 +44,14 @@ export class ShowTasksComponent implements OnInit {
       this.projectTasks = tasks;
     },
     () => this.listError = 'Sorry! No notes! Something went bad on the backend route!')
+  }
+
+  showForm() {
+    this.show=!this.show;
+  }
+
+  showEditT() {
+    this.showEditTask=!this.showEditTask;
   }
 
 }
