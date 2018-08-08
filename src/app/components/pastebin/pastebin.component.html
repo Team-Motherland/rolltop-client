@@ -1,0 +1,18 @@
+<p>
+  pastebin works!
+</p>
+
+<!-- Pastebin Upload -->
+<h3> Upload File </h3>
+<input type="file" (change)="selectFile($event)" placeholder="Upload file">
+
+<!-- Pastebin Downlaod -->
+<h3> File's Available </h3>
+<button (click)="getFileList()">getFiles</button>
+
+<div *ngFor= "let file of fileList">
+      {{file}} 
+      <button (click)="downloadFile(file)"> Download </button>
+      <br>
+      <!-- <a [routerLink]="['entries', oneEntry._id]">See Details</a> --> 
+  </div>

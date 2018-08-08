@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '../../../../../node_modules/@angular/router';
 import { TodoService } from '../../../services/todo.service';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-new-project',
@@ -18,28 +19,32 @@ export class NewProjectComponent implements OnInit {
     closed: Boolean
   }
 
+  theUser: any = {};
+
+
   saveError: string;
 
   constructor(private myTodoService: TodoService,
+              private myAuthService: AuthService,
               private myRouter: Router ) { }
 
   ngOnInit() {
+    this.myAuthService.checklogin()
+    .toPromise()
+    .then( resFromDB => {
+      console.log('user in notes: ', resFromDB)
+      this.theUser = resFromDB;
+    } )
+    //this.showNoteList();
   }
 
   saveNewProject(){
     this.myTodoService.createNewProject(this.newProject)
-    .then( (newProject) => {
+    .then( newProject => {
       //this.myRouter.navigate(['/notes']);
+      location.reload();
       console.log("Project Saved");
     } )
     .catch( err => this.saveError = 'Error while saving note in the component: ');
   }
-
-  getProjects(){
-    this.myTodoService.getProjects()
-    .subscribe((res)=>{
-      this.projectList = res.reverse();
-    })
-  }
-
 }

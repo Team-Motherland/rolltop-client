@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToDoMainComponent implements OnInit {
 
+  currentView: String = "showProjects";
+
   constructor() { }
 
   ngOnInit() {
+
+  }
+
+  receiveMessage($event){
+    console.log("Switch View Called");
+    this.currentView = $event;
+  }
+
+  viewChecker(viewName){
+    return viewName === this.currentView;
   }
 
 }

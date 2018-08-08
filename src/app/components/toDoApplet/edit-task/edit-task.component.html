@@ -1,0 +1,25 @@
+<form  (submit)="editTask(taskObj._id)">
+
+    Task Id: {{taskObj._id}}
+
+    <h3>Edit Task</h3>
+    <label>Title</label>
+    <input [(ngModel)]="task.action" name="title" type="text" value= "">
+  
+    <br>
+  
+    <label>DueTime</label>
+    <input [(ngModel)]="task.dueTime" name="title" type = "text" value = "">
+  
+    <br>
+  
+    <label>Order Number </label>
+    <input [(ngModel)]="task.orderNumber" name="title" text = "text" value = "">
+  
+    <br>
+
+    <input [(ngModel)]="task.completed" type="radio" name="done" checked> Done<br>
+
+    <button>Submit Task Edit</button>
+  
+  </form>
