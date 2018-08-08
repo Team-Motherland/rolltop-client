@@ -9,12 +9,10 @@
   <label>Description</label>
   <textarea  [(ngModel)]="newProject.description" name="title" cols="30" rows="10"></textarea>
 
-<button>Submit</button>
+<button>Submit New Project</button>
 
 </form>
 
-
-<h3> List of Projects </h3>
 <div *ngFor="let project of projectList">
 
   <h3>{{project.title}}</h3>

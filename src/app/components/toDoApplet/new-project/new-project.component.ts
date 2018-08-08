@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '../../../../../node_modules/@angular/router';
+import { Router, ActivatedRoute } from '../../../../../node_modules/@angular/router';
 import { TodoService } from '../../../services/todo.service';
 import { AuthService } from '../../../services/auth.service';
 
@@ -13,29 +13,28 @@ export class NewProjectComponent implements OnInit {
   projectList: Array<any>;
 
   newProject = {
-    title: String,
+    title: "",
     tasks: Array,
-    description: String,
-    closed: Boolean
+    description: "",
+    closed: false
   }
 
   theUser: any = {};
-
 
   saveError: string;
 
   constructor(private myTodoService: TodoService,
               private myAuthService: AuthService,
-              private myRouter: Router ) { }
+              private myRouter: Router ,
+              private myRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.myAuthService.checklogin()
     .toPromise()
     .then( resFromDB => {
-      console.log('user in notes: ', resFromDB)
+      //console.log('user in notes: ', resFromDB)
       this.theUser = resFromDB;
     } )
-    //this.showNoteList();
   }
 
   saveNewProject(){

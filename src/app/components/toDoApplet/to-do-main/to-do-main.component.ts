@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ToDoMainComponent implements OnInit {
 
   currentView: String = "showProjects";
+  show: boolean = false;
 
   constructor() { }
 
@@ -24,4 +25,7 @@ export class ToDoMainComponent implements OnInit {
     return viewName === this.currentView;
   }
 
+  showForm() {
+    this.show = !this.show;
+  }
 }
