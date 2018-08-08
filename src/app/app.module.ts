@@ -32,10 +32,10 @@ import {Routes, RouterModule} from '@angular/router';
 import { AuthService } from './services/auth.service';
 import { NotesService } from './services/notes.service';
 import { QuoteService } from './services/quote.service';
+import { PlacesService } from './services/places.service';
 
 import { PastebinService } from './services/pastebin.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http'
-import { PlacesService } from './services/places.service';
 
 
 //image upload
@@ -130,8 +130,7 @@ const routes: Routes = [
     ShowTasksComponent,
     AddTaskComponent,
     EditTaskComponent,
-    PastebinComponent
-    NavbarComponent,
+    PastebinComponent,
     ToDoMainComponent,
     NewProjectComponent
   ],
@@ -147,11 +146,11 @@ const routes: Routes = [
   ],
 
   providers: [AuthService,
-                NotesService, 
-                QuoteService, 
-                TodoService, 
-                 PlaceServices,
-                 PastebinService],
+              NotesService, 
+              QuoteService, 
+              TodoService, 
+              PlacesService,
+              PastebinService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
