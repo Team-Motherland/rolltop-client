@@ -14,7 +14,7 @@
     <p>Task Order Number: {{task.orderNumber}}</p>
     <p>Task Complete: {{task.completed}}</p>
     <button (click) = "showEditT()"> Edit Task </button>
-    <button (click) = "deleteTask(project._id)"> Delete Task </button>
+    <button (click) = "deleteTask(task)"> Delete Task </button>
 
     <div [hidden]="!showEditTask">
         <app-edit-task [taskObj] = 'task'> </app-edit-task>
