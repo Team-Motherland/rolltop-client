@@ -5,9 +5,10 @@
     
     <div class="row">
       <h3>Your Notes</h3>
+      <h3 [hidden]="!show">Add a New Note</h3>
     </div>
-    <div class="row">
-      <h5>Create new note<button (click)="showForm()"> Click Here</button></h5>
+    <div class="row new-item" [hidden]="show">
+      <h5>Create new note<button class="btn btn-outline-info"(click)="showForm()"> Click Here</button></h5>
     </div>
 
     <div class="row mainContent">
@@ -16,7 +17,7 @@
           <li><a [routerLink]="['/notes',oneNote._id]">{{ oneNote.title }}</a></li>
         </ul>
       </div>
-      <div [hidden]="!show">
+      <div class="col-sm-6" [hidden]="!show">
           <app-new-note></app-new-note>
       </div>
 
