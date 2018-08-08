@@ -18,6 +18,11 @@ import { ToDoMainComponent } from './components/toDoApplet/to-do-main/to-do-main
 import { NewProjectComponent } from './components/toDoApplet/new-project/new-project.component';
 
 import { QuoteComponent } from './components/quote/quote.component';
+import { FavplacesComponent } from './components/favplaces/favplaces.component';
+import { PlaceDetailsComponent } from './components/place-details/place-details.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { NewPlaceComponent } from './components/new-place/new-place.component';
+
 
 
 // routes:
@@ -27,8 +32,11 @@ import {Routes, RouterModule} from '@angular/router';
 import { AuthService } from './services/auth.service';
 import { NotesService } from './services/notes.service';
 import { QuoteService } from './services/quote.service';
+
 import { PastebinService } from './services/pastebin.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http'
+import { PlacesService } from './services/places.service';
+
 
 //image upload
 import { FileUploadModule } from "ng2-file-upload";
@@ -70,7 +78,19 @@ const routes: Routes = [
       path:'notes/:id',
       component: NoteDetailsComponent
     },
-    // (JM) ToDo List Main App Route 
+
+    {
+      path:'places',
+      component: FavplacesComponent
+    },
+    {
+      path:'places/new',
+      component: NewPlaceComponent
+    },
+    {
+      path:'places/:id',
+      component: PlaceDetailsComponent
+    }, 
     {
       path:'todo',
       component: ToDoMainComponent
@@ -95,7 +115,11 @@ const routes: Routes = [
     NoteDetailsComponent,
     TitleComponent,
     DesktopComponent,
-    // ToDo components after this
+    QuoteComponent,
+    FavplacesComponent,
+    NewPlaceComponent,
+    PlaceDetailsComponent,
+    NavbarComponent,
     ToDoMainComponent,
     NewProjectComponent,
     //End ToDo component 
@@ -107,6 +131,9 @@ const routes: Routes = [
     AddTaskComponent,
     EditTaskComponent,
     PastebinComponent
+    NavbarComponent,
+    ToDoMainComponent,
+    NewProjectComponent
   ],
   imports: [
     BrowserModule,
@@ -118,7 +145,13 @@ const routes: Routes = [
     HttpClientModule,
     FormsModule
   ],
-  providers: [AuthService, NotesService, QuoteService, TodoService, PastebinService],
+
+  providers: [AuthService,
+                NotesService, 
+                QuoteService, 
+                TodoService, 
+                 PlaceServices,
+                 PastebinService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -33,6 +33,7 @@ export class NewNoteComponent implements OnInit {
       }
       this.saveError = '';
       this.myRouter.navigate(['/notes']);
+      location.reload();
 
     } )
     .catch( err => this.saveError = 'Error while saving note in the component: ');
