@@ -39,10 +39,10 @@ export class EditProjectComponent implements OnInit {
 
   //getProject
 
-  editProject(id){
+  editProject(theProject){
    // console.log('is this id: ', id)
     //console.log('what is this: ', this.project)
-    this.myTodoService.editProject(this.project , id)
+    this.myTodoService.editProject(this.project , theProject._id)
     .then( editedProject => {
       //this.myRouter.navigate(['/todo/'+ this.id ]);
       //location.reload();
