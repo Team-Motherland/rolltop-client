@@ -10,6 +10,7 @@ export class PastebinService {
 
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpParams, HttpRequest, HttpEvent} from '@angular/common/http';
+import {RequestOptions, ResponseContentType, RequestMethod} from '@angular/http';
 import { environment } from '../../environments/environment';
 import {Observable} from "rxjs";
 import { Http } from "@angular/http";
@@ -42,8 +43,16 @@ export class PastebinService {
     .map((responseThingy)=> responseThingy.json())
   }
 
-  downloadFile(){
-    return this.myHttp.get(`${environment.apiBase}/api/printFolder`,  { withCredentials: true })
+  downloadFile(file){
+    return this.myHttp.get(`${environment.apiBase}/api/download/` + file,  { withCredentials: true })
     .map((responseThingy)=> responseThingy.json())
   }
+
+  /*getFile(path: string):Observable<Blob>{
+    let options = new RequestOptions({responseType: ResponseContentType.Blob});
+  
+    return this.http.get(path, options)
+        .map((response: Response) => <Blob>response.blob())              
+        .catch(this.handleError);
+  }*/
 }
