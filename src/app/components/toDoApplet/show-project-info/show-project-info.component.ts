@@ -35,7 +35,7 @@ export class ShowProjectInfoComponent implements OnInit {
   showProjectInfo(id){
     this.myTodoService.getProject(id)
     .subscribe( myProject => {
-      console.log("show Project",myProject);
+      //console.log("show Project",myProject);
       this.project = myProject;
       this.loadTasksToService();
     },
