@@ -1,0 +1,51 @@
+  h1 {
+    margin: 0vh 20vw 2vh 20vw;
+    padding: 4vh 2vw 6vh;
+    font-size: 12rem;
+  
+    border-radius: 25px;
+    background-color: #FFD433;
+    box-shadow:  inset 0px 1px 10px #010100;
+    color: #f6f6f6;
+    font: italic bold 100px Georgia, Serif;
+    text-shadow: -3px 2px 5px #17252C, -5px 4px 5px #010100, -7px 6px 5px #010100;
+  }
+
+  h2 {
+    font-size: 4rem;
+    padding-top: 21vh; 
+    color: #FFD433;
+    text-shadow: -3px 2px 0  #010100;
+  }
+
+  h5 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    color: #0090ca;
+    text-shadow: -3px 2px 0  #010100;
+  }
+
+  .landing {
+    display: block;
+    text-align: center;
+  }
+
+  .welcome-route {
+    margin: 5px 20vw;
+    display: flex;
+    justify-content: center;
+  }
+
+
+
+  #allPage {
+    margin-left: -15px;
+    width: 100vw;
+    height: 100vh;
+    background: url("../../../../../images/desktopview.jpeg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+  }

@@ -14,6 +14,7 @@ export class AllNotesComponent implements OnInit {
   listError: String = '';
   logoutError: String = '';
   theUser: any = {};
+  show: boolean = false;
 
 
   constructor( private myNotesService: NotesService,
@@ -35,6 +36,7 @@ export class AllNotesComponent implements OnInit {
     this.myNotesService.getAllNotes()
     .subscribe( allNotes => {
       this.allTheNotes = allNotes;
+      
     },
     () => this.listError = 'Sorry! No notes! Something went bad on the backend route!')
   }
@@ -50,5 +52,9 @@ export class AllNotesComponent implements OnInit {
         this.logoutError = "Log out went bad.";
       });
   } // close logMeOut()
+
+  showForm() {
+    this.show=!this.show;
+  }
 
 }
