@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 //import {  } from '../../../services/todo.service';
 import { PastebinService } from '../../services/pastebin.service';
 import {HttpClient, HttpParams, HttpRequest, HttpEvent, HttpEventType, HttpResponse} from '@angular/common/http';
+import {environment} from '../../../environments/environment'
 
 @Component({
   selector: 'app-pastebin',
@@ -11,6 +12,7 @@ import {HttpClient, HttpParams, HttpRequest, HttpEvent, HttpEventType, HttpRespo
 
 export class PastebinComponent implements OnInit {
 
+  baseUrl = environment.apiBase;
   listError: String = '';
   fileList: Array<any>;
 
@@ -60,12 +62,8 @@ export class PastebinComponent implements OnInit {
     () => this.listError = 'Sorry! No notes! Something went bad on the backend route!')
   }
 
-  downloadFile(fileN){
-    this.upload.downloadFile(fileN)
-    .subscribe( tasks => {
+  downloadFile(fileName){
 
-    },
-    () => this.listError = 'Sorry! No notes! Something went bad on the backend route!')
   }
 }
 

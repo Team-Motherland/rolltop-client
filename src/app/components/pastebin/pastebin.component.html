@@ -12,7 +12,8 @@
 
 <div *ngFor= "let file of fileList">
       {{file}} 
-      <button (click)="downloadFile(file)"> Download </button>
+      <!-- <button (click)="downloadFile(file)"> Download </button> -->
+      <a href= "{{baseUrl}}/pastebin/5b6864faae6e9c42cc2bdeaf/{{file}}" download = "true"> Download File</a>
       <br>
       <!-- <a [routerLink]="['entries', oneEntry._id]">See Details</a> --> 
   </div>

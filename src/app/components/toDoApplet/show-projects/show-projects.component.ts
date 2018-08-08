@@ -11,7 +11,7 @@ import { AuthService } from '../../../services/auth.service';
 export class ShowProjectsComponent implements OnInit {
 
   projectList: Array<any>;
-
+  show: boolean = false;
   theUser: any = {};
 
   listError: String = '';
@@ -32,6 +32,9 @@ export class ShowProjectsComponent implements OnInit {
     () => this.listError = 'Sorry! No notes! Something went bad on the backend route!')
   }
 
+  showForm() {
+    this.show = !this.show;
+  }
 }
 
 
