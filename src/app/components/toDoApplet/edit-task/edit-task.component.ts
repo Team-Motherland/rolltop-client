@@ -15,7 +15,7 @@ export class EditTaskComponent implements OnInit {
     action:"Name" ,
     dueTime: "Due Date",
     orderNumber: "Priority",
-    completed: ""
+    completed: false
   }
 
   id: Number;
@@ -33,6 +33,19 @@ export class EditTaskComponent implements OnInit {
 
   editTask(id){
     console.log(id);
+    this.myTodoService.editTask(this.task, id)
+    .then( editedTask => {
+      //this.myRouter.navigate(['/todo/'+ this.id ]);
+      location.reload();
+      //console.log(this.task);
+    } )
+    .catch( err => this.listError = 'Error while saving note in the component: ');
+  }
+
+  completeTask(id){
+    this.task = this.taskObj;
+    this.task.completed = true;
+    //console.log(this.taskObj);
     this.myTodoService.editTask(this.task, id)
     .then( editedTask => {
       //this.myRouter.navigate(['/todo/'+ this.id ]);

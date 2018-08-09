@@ -41,7 +41,7 @@ export class ShowTasksComponent implements OnInit {
     this.myTodoService.getTaskList(this.ProjectId)
     .subscribe( tasks => {
       //console.log(tasks);
-      this.projectTasks = tasks;
+      this.projectTasks = tasks.sort(this.compare);
     },
     () => this.listError = 'Sorry! No notes! Something went bad on the backend route!')
   }
@@ -62,6 +62,23 @@ export class ShowTasksComponent implements OnInit {
       location.reload();
     } )
     .catch( err => this.listError = 'Error while saving note in the component: ');
+  }
+
+  compare(a, b) {
+    const num1 = a.orderNumber;
+    const num2 = b.orderNumber;
+    
+    let comparison = 0;
+    if (num1 > num2) {
+      comparison = 1;
+    } else if (num1 < num2) {
+      comparison = -1;
+    }
+    return comparison;
+  }
+
+  getDisplayDate(date){
+      
   }
 
 }

@@ -1,20 +1,31 @@
 
-<h2> ToDo Applet </h2>
+<div class =allPage>
+        <div class = "pageView">
+                <div class="row">
+                        <div class = "col-sm-6">
+                                <div class = "projectHeader">
+                                        <h2> Projects </h2>
+                                        <button (click)="showForm()"> New Project </button>
+                                </div>
 
+                                <br> <br> <br>
+                                
+                                <div [hidden]="!show">
+                                        <app-new-project> </app-new-project>
+                                </div>
 
-<div class="row">
-        <h5>Create new Project <button (click)="showForm()"> New Project </button></h5>
+                                <br>
+                        </div>
+
+                        <div class = "=col-sm-3">  
+                                <h3> List of Projects </h3>
+                                <div *ngFor= "let project of projectList">
+                                        <div class = "project">
+                                                <a [routerLink]= "['/todo/', project._id]"> {{project.title}}</a>
+                                        </div>
+                                        <br>
+                                </div>
+                        </div>
+                </div>
+        </div>
 </div>
-
-<div [hidden]="!show">
-        <app-new-project> </app-new-project>
-</div>
-
-
-<h3> List of Projects </h3>
-<div *ngFor= "let project of projectList">
-
-   <a [routerLink]= "['/todo/', project._id]"> {{project.title}}</a>
-        
-</div>
-
