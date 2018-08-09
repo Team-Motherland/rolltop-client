@@ -1,18 +1,13 @@
-<!-- <div>
-    Logged in as {{currentUser.username}} 
-</div>
-<br>
-<button (click)="logMeOut()">Log Out </button>
-   -->
-  
+
+<div class="allPage">
   <div [hidden]="!show">
     <h3>{{note.title}}</h3> 
     <hr>
     <p>{{note.content}}</p>
   </div>
   
-  <button *ngIf="note._id" (click)="deleteThisNote()">DELETE</button>
-  <button *ngIf="note._id" (click)="editNote()">EDIT</button>
+  <button class="btn btn-outline-danger" *ngIf="note._id" (click)="deleteThisNote()">DELETE</button>
+  <button class="btn btn-outline-primary" *ngIf="note._id" (click)="editNote()">EDIT</button>
 
   <a [routerLink]="['/notes']">Go back to the list of notes</a>
   <hr>

@@ -30,7 +30,7 @@
 
 
 #retail-tile {
-    background: #00CDD3;
+    background: #0090ca;
     border-radius: 25px;
     box-shadow:  0px 1px 10px #010100;
     padding: 25px 40px;
@@ -41,7 +41,7 @@
 }
 
 #private-tile {
-    background: #00CDD3;
+    background: #ffd800;
     border-radius: 25px;
     box-shadow:  0px 1px 10px #010100;
     padding: 25px 40px;

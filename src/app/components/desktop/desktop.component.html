@@ -13,7 +13,8 @@
 
         <div class="col-sm-4 second">
           <div id="pastebin-tile">
-            <h5>Your Pastebin <a [routerLink]="['/pastebin']"> see more</a></h5>
+            <h5>Your Pastebin </h5>
+            <a [routerLink]="['/pastebin']"> see more</a>
           </div><!-- end of pastebin-tile div--> 
           <div id="places-tile">
             <h5>Your Places <a [routerLink]="['/places']"> see more</a></h5>
@@ -25,7 +26,11 @@
             <app-quote></app-quote>
           </div> <!-- end of quote-tile div--> 
           <div id="notes-tile">
-             <h5>Your Notes <a [routerLink]="['/notes']"> see more</a></h5>
+             <h5>Your Notes</h5>
+             <div *ngFor="let note of allTheNotes; let i =index">
+                <td *ngIf ="i>=allTheNotes.length -3"><a [routerLink]="['/notes',note._id]">{{note.title}}</a></td>
+             </div>
+             <a [routerLink]="['/notes']"> see more</a>
           </div> <!-- end of notes-tile div--> 
             
             
