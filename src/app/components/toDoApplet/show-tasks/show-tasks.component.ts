@@ -14,6 +14,7 @@ export class ShowTasksComponent implements OnInit {
   listError: String = '';
   show: boolean = false;
   showEditTask: boolean = false;
+  showDelete: boolean = false;
   //project = {};
 
   projectTasks: Array<any>;
@@ -47,10 +48,21 @@ export class ShowTasksComponent implements OnInit {
   }
 
   showForm() {
+
     this.show=!this.show;
   }
 
+  confirmDelete() {
+    if(this.showEditTask)
+    this.showEditTask=!this.showEditTask;
+
+    this.showDelete=!this.showDelete;
+  }
+
   showEditT() {
+    if(this.showDelete)
+      this.showDelete=!this.showDelete;
+
     this.showEditTask=!this.showEditTask;
   }
 
