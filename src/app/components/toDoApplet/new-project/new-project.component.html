@@ -1,5 +1,5 @@
 <form  (submit)="saveNewProject()">
-  <h3>Add a New Project</h3>
+  <h3>Add New Project</h3>
 
   <label>Title</label> <br>
   <input [(ngModel)]="newProject.title" name="title" type="text">
@@ -9,7 +9,7 @@
   <label>Description</label> <br>
   <textarea  [(ngModel)]="newProject.description" name="title" cols="30" rows="10"></textarea>
   <br>
-<button>Submit New Project</button>
+<button class="btn btn-outline-danger">Submit New Project</button>
 
 </form>
 
