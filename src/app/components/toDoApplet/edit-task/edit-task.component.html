@@ -1,25 +1,29 @@
-<form  (submit)="editTask(taskObj._id)">
-    
-    <div class="row taskRow">
-      <h3>Edit Task</h3>
-      <label>Title: </label>
-      <input [(ngModel)]="task.action" name="title" type="text" value= "Name">
-    
-      <br>
-    
-      <label>DueTime: </label>
-      <input [(ngModel)]="task.dueTime" name="title" type = "text" value = "Due Time">
-    
-      <br>
-    
-      <label>Order Number: </label>
-      <input [(ngModel)]="task.orderNumber" name="title" text = "text" value = "Order Number">
-    
-      <br>
 
-      <input [(ngModel)]="task.completed" type="radio" name="done" checked> Done<br>
+  <form  (submit)="editTask(taskObj._id)">
+      
+    <div class="row">
+      <div class = "col-sm-4">  
+        <h3>Edit Task</h3> 
+      </div>
+      <button>Submit Task Edit</button>
+      <button  (click)="completeTask(taskObj._id)">Complete Task</button>
     </div>
-    <button>Submit Task Edit</button>
+    <div class="row taskRow">
+        <div class = "col-sm-4">   
+          <label>Title: </label>
+          <input [(ngModel)]="task.action" name="title" type="text" value= "Name">
+        </div>
+      
+        <div class = "col-sm-4">   
+          <label>DueTime: </label>
+          <input [(ngModel)]="task.dueTime" name="title" type = "date" value = "" min="2018-01-01" max="2018-12-31">
+        </div>
+      
+        <div class = "col-sm-4">   
+          <label>Order Number: </label>
+          <input [(ngModel)]="task.orderNumber" name="title" text = "text" value = "Order Number">
+        </div>
 
-  
-  </form>
+        <!-- <input [(ngModel)]="task.completed" type="radio" name="done" checked> Done<br> -->
+      </div>
+    </form>

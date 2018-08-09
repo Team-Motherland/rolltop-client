@@ -1,8 +1,8 @@
 <div class="row taskHeader">
-    <div class = "projectInfo col-sm-9">      
+    <div class = "col-sm-9">      
         <h2> Project Tasks </h2>
     </div>
-    <div class = "projectInfo col-sm-3">  
+    <div class = "col-sm-3">  
         <button (click)="showForm()"> New Task </button>
     </div>
 </div>
@@ -10,23 +10,27 @@
       <app-add-task> </app-add-task>
   </div>
 <br>
-<h3> List of tasks </h3>
-<div *ngFor= "let task of projectTasks">
+    <h3> List of tasks </h3>
+    <div *ngFor= "let task of projectTasks">
+        <div class="row tasks">
+            <div class = "col-sm-4">   
+                <h4> ({{task.orderNumber}}) {{task.action}}</h4> 
+                Due Time: {{task.dueTime | date : "dd.MM.y" }} <br>
+                Completed: {{task.completed}} <br>
 
-    <div class="row tasks">
-        <div class = "projectInfo col-sm-4">   
-            <h4>{{task.action}}</h4> 
-            Task Due Time: {{task.dueTime}} <br>
-            Task Order Number: {{task.orderNumber}} <br>
-            Task Complete: {{task.completed}} <br>
-            <button (click) = "showEditT()"> Edit Task </button>
-            <button (click) = "deleteTask(task)"> Delete Task </button>
+                <div class="row">
+                    <div [hidden]= "task.completed">  
+                            <button (click) = "showEditT()"> Edit Task </button>
+                    </div>
+
+                    <button (click) = "deleteTask(task)"> Delete Task </button>
+                </div>
+            </div>
+
+            <div [hidden]="!showEditTask" class = "col-sm-8">
+                <app-edit-task [taskObj] = 'task'> </app-edit-task>
+            </div>
         </div>
-        <div [hidden]="!showEditTask" class = "projectInfo col-sm-8">
-            <app-edit-task [taskObj] = 'task'> </app-edit-task>
-        </div>
+        <hr>
+        <!-- <a [routerLink]="['entries', oneEntry._id]">See Details</a> --> 
     </div>
-
-    <hr><br>
-    <!-- <a [routerLink]="['entries', oneEntry._id]">See Details</a> --> 
-</div>

@@ -1,14 +1,14 @@
 <form  (submit)="saveNewProject()">
   <h3>Add a New Project</h3>
 
-  <label>Title</label>
+  <label>Title</label> <br>
   <input [(ngModel)]="newProject.title" name="title" type="text">
 
-  <br>
+  <br><br> 
 
-  <label>Description</label>
+  <label>Description</label> <br>
   <textarea  [(ngModel)]="newProject.description" name="title" cols="30" rows="10"></textarea>
-
+  <br>
 <button>Submit New Project</button>
 
 </form>
