@@ -1,3 +1,11 @@
 textarea {
    height: 45vh;
+   border-radius: 25px;
+   border-color: #f6f6f6;
+   box-shadow:  inset 0px 1px 10px #010100;
+}
+
+input {
+    border-radius: 15px;
+   
 }
