@@ -14,7 +14,7 @@ export class NewProjectComponent implements OnInit {
 
   newProject = {
     title: "",
-    tasks: Array,
+    tasks: [] ,
     description: "",
     closed: false
   }

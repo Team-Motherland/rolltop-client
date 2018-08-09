@@ -11,9 +11,9 @@ import { TodoService } from '../../../services/todo.service';
 export class ShowProjectInfoComponent implements OnInit {
 
   project : {
-    title: String,
-    description: String,
-    closed: Boolean
+    title: "",
+    description: "",
+    closed: ""
   };
 
   listError: String = '';
