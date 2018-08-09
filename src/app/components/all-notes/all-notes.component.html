@@ -17,10 +17,12 @@
           <li><a [routerLink]="['/notes',oneNote._id]">{{ oneNote.title }}</a></li>
         </ul>
       </div>
-
       <div class="col-sm-6" [hidden]="!show">
           <app-new-note></app-new-note>
           <h5><button class="btn btn-outline-info"(click)="showForm()"> Cancel</button></h5>
+      </div>
+      <div class="col-sm-6" [hidden]="show">
+    
       </div>
 
     </div> <!-- end of mainContent div-->

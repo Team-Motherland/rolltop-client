@@ -35,8 +35,12 @@ export class AllNotesComponent implements OnInit {
   showNoteList(){
     this.myNotesService.getAllNotes()
     .subscribe( allNotes => {
-      this.allTheNotes = allNotes;
-      
+      console.log("whaaaaaaaaat ", allNotes)
+
+      this.allTheNotes = allNotes.reverse();
+      console.log("after ", this.allTheNotes)
+      // this.allTheNotes = this.allTheNotes.reverse();
+      // console.log("thaaaaaaaaat:", this.allTheNotes)
     },
     () => this.listError = 'Sorry! No notes! Something went bad on the backend route!')
   }
