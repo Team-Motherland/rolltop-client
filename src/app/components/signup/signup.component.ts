@@ -39,6 +39,7 @@ export class SignupComponent implements OnInit {
 
         // redirect to /phones
         this.myRouter.navigate(["/"]);
+        location.reload();
       })
       .catch(err => {
         const parsedError = err.json();

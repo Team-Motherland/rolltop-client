@@ -10,7 +10,7 @@ import { TodoService } from '../../../services/todo.service';
 })
 export class ShowTasksComponent implements OnInit {
 
-  id:Number;
+  ProjectId:Number;
   listError: String = '';
   show: boolean = false;
   showEditTask: boolean = false;
@@ -26,7 +26,7 @@ export class ShowTasksComponent implements OnInit {
   ngOnInit() {
     
     this.myRoute.params.subscribe(params => {
-      this.id = params["id"];
+      this.ProjectId = params["id"];
     });
     //this.getTaskArray();
     this.showTasks();
@@ -38,7 +38,7 @@ export class ShowTasksComponent implements OnInit {
   }
 
   showTasks(){
-    this.myTodoService.getTaskList(this.id)
+    this.myTodoService.getTaskList(this.ProjectId)
     .subscribe( tasks => {
       //console.log(tasks);
       this.projectTasks = tasks;
@@ -52,6 +52,16 @@ export class ShowTasksComponent implements OnInit {
 
   showEditT() {
     this.showEditTask=!this.showEditTask;
+  }
+
+  deleteTask(task){
+    //console.log(task._id, this.ProjectId);
+    this.myTodoService.deleteTask(task._id, this.ProjectId)
+    .then( deletedProject => {
+      //this.myRouter.navigate(['/todo/']);
+      location.reload();
+    } )
+    .catch( err => this.listError = 'Error while saving note in the component: ');
   }
 
 }

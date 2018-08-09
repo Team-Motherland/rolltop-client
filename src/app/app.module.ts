@@ -12,16 +12,16 @@ import { DesktopComponent } from './components/desktop/desktop.component';
 import { AllNotesComponent } from './components/all-notes/all-notes.component';
 import { NewNoteComponent } from './components/new-note/new-note.component';
 import { NoteDetailsComponent } from './components/note-details/note-details.component';
-
-//(JM Added components)
-import { ToDoMainComponent } from './components/toDoApplet/to-do-main/to-do-main.component';
-import { NewProjectComponent } from './components/toDoApplet/new-project/new-project.component';
-
 import { QuoteComponent } from './components/quote/quote.component';
 import { FavplacesComponent } from './components/favplaces/favplaces.component';
 import { PlaceDetailsComponent } from './components/place-details/place-details.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NewPlaceComponent } from './components/new-place/new-place.component';
+
+//(JM Added components)
+
+import { NewProjectComponent } from './components/toDoApplet/new-project/new-project.component';
+
 
 
 
@@ -93,7 +93,7 @@ const routes: Routes = [
     }, 
     {
       path:'todo',
-      component: ToDoMainComponent
+      component: ShowProjectsComponent
     },
     {
       path: 'todo/:id',
@@ -120,7 +120,6 @@ const routes: Routes = [
     NewPlaceComponent,
     PlaceDetailsComponent,
     NavbarComponent,
-    ToDoMainComponent,
     NewProjectComponent,
     //End ToDo component 
     QuoteComponent,
@@ -131,7 +130,6 @@ const routes: Routes = [
     AddTaskComponent,
     EditTaskComponent,
     PastebinComponent,
-    ToDoMainComponent,
     NewProjectComponent
   ],
   imports: [

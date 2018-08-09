@@ -43,16 +43,7 @@ export class PastebinService {
     .map((responseThingy)=> responseThingy.json())
   }
 
-  downloadFile(file){
-    return this.myHttp.get(`${environment.apiBase}/api/download/` + file,  { withCredentials: true })
-    .map((responseThingy)=> responseThingy.json())
-  }
+  downloadFile(){
 
-  /*getFile(path: string):Observable<Blob>{
-    let options = new RequestOptions({responseType: ResponseContentType.Blob});
-  
-    return this.http.get(path, options)
-        .map((response: Response) => <Blob>response.blob())              
-        .catch(this.handleError);
-  }*/
+  }
 }

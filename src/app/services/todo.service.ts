@@ -68,4 +68,12 @@ export class TodoService {
     .catch( err => console.log('Error while creating new entry: ', err) )
   }
 
+  deleteTask(taskId, projectId){
+    //console.log(taskId);
+    return this.myHttp.post(`${environment.apiBase}/api/project/` + projectId + "/delete-task/" + taskId, {} ,  { withCredentials: true })
+    .toPromise()
+    .then( res => console.log(res.json()) )
+    .catch( err => console.log('Error while creating new entry: ', err) )
+  }
+
 }
