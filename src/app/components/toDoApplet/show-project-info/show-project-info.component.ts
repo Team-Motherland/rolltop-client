@@ -11,14 +11,15 @@ import { TodoService } from '../../../services/todo.service';
 export class ShowProjectInfoComponent implements OnInit {
 
   project : {
-    title: String,
-    description: String,
-    closed: Boolean
+    title: "",
+    description: "",
+    closed: ""
   };
 
   listError: String = '';
   id:Number = 0;
   show: boolean = false;
+  showDelete: boolean = false;
 
   constructor(private myTodoService: TodoService,
     private myRouter: Router,
@@ -27,13 +28,14 @@ export class ShowProjectInfoComponent implements OnInit {
   ngOnInit() {
     this.myRoute.params.subscribe(params => {
       this.id = params["id"];
-      console.log("ID" , this.id);
+      //console.log("ID" , this.id);
       this.showProjectInfo(this.id);
     });
   }
 
-  showProjectInfo(theProject){
-    this.myTodoService.getProject(theProject._id)
+  showProjectInfo(id){
+    //console.log("showProjectInfo");
+    this.myTodoService.getProject(id)
     .subscribe( myProject => {
       //console.log("show Project",myProject);
       this.project = myProject;
@@ -56,6 +58,15 @@ export class ShowProjectInfoComponent implements OnInit {
   }
 
   showForm() {
+    if(this.showDelete)
+      this.showDelete=!this.showDelete;
+
     this.show=!this.show;
+  }
+
+  toggleDelete() {
+    if(this.show)
+      this.show=!this.show;
+    this.showDelete=!this.showDelete;
   }
 }

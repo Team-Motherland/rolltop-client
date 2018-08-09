@@ -1,23 +1,30 @@
-<h2> Project Tasks </h2>
-  <!--<button (click) = "addTask(project._id)"> Add Task </button> -->
-
-  <h5>Create new task<button (click)="showForm()"> New Task </button></h5>
+<div class="row taskHeader">
+    <div class = "projectInfo col-sm-9">      
+        <h2> Project Tasks </h2>
+    </div>
+    <div class = "projectInfo col-sm-3">  
+        <button (click)="showForm()"> New Task </button>
+    </div>
+</div>
   <div [hidden]="!show">
       <app-add-task> </app-add-task>
   </div>
-
-<h3> List of tasks </h3>>
-
+<br>
+<h3> List of tasks </h3>
 <div *ngFor= "let task of projectTasks">
-    <p>Task Name: {{task.action}}</p>
-    <p>Task Due Time: {{task.dueTime}}</p>
-    <p>Task Order Number: {{task.orderNumber}}</p>
-    <p>Task Complete: {{task.completed}}</p>
-    <button (click) = "showEditT()"> Edit Task </button>
-    <button (click) = "deleteTask(task)"> Delete Task </button>
 
-    <div [hidden]="!showEditTask">
-        <app-edit-task [taskObj] = 'task'> </app-edit-task>
+    <div class="row tasks">
+        <div class = "projectInfo col-sm-4">   
+            <h4>{{task.action}}</h4> 
+            Task Due Time: {{task.dueTime}} <br>
+            Task Order Number: {{task.orderNumber}} <br>
+            Task Complete: {{task.completed}} <br>
+            <button (click) = "showEditT()"> Edit Task </button>
+            <button (click) = "deleteTask(task)"> Delete Task </button>
+        </div>
+        <div [hidden]="!showEditTask" class = "projectInfo col-sm-8">
+            <app-edit-task [taskObj] = 'task'> </app-edit-task>
+        </div>
     </div>
 
     <hr><br>

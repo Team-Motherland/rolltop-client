@@ -12,9 +12,9 @@ export class EditTaskComponent implements OnInit {
   @Input() taskObj: any;
 
   task = {
-    action:"" ,
-    dueTime: "",
-    orderNumber: "",
+    action:"Name" ,
+    dueTime: "Due Date",
+    orderNumber: "Priority",
     completed: ""
   }
 

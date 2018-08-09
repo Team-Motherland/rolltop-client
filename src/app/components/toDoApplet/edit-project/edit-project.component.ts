@@ -10,9 +10,9 @@ import { TodoService } from '../../../services/todo.service';
 export class EditProjectComponent implements OnInit {
 
   project = {
-    title: String,
-    description: String,
-    closed: Boolean
+    title: "",
+    description: "",
+    closed: ""
   }
 
   listError: String = '';
