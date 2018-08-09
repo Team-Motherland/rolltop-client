@@ -1,13 +1,40 @@
 <div class="allPage">
-<h2>Welcome to your Rolltop Desktop!</h2>
 
-<app-quote></app-quote>
-<h5>Your Notes <a [routerLink]="['/notes']"> here</a></h5>
-<h5>Your Projects <a [routerLink]="['/todo']"> here</a></h5>
-<h5>Your Places <a [routerLink]="['/places']"> here</a></h5>
-<h5>Your Pastebin <a [routerLink]="['/pastebin']"> here</a></h5>
+<div class="container">
+    <div class="row heading"><h2>Your Rolltop Desktop!</h2></div>
 
+    <div id="all-apps-thumbs" class="row">
+
+        <div class="col-sm-4 first">
+          <div id="projects-tile">
+            <h5>Your Projects <a [routerLink]="['/todo']"> see more</a></h5>
+          </div>   <!-- end of projects-tile div--> 
+        </div> <!-- end of first col div-->
+
+        <div class="col-sm-4 second">
+          <div id="pastebin-tile">
+            <h5>Your Pastebin <a [routerLink]="['/pastebin']"> see more</a></h5>
+          </div><!-- end of pastebin-tile div--> 
+          <div id="places-tile">
+            <h5>Your Places <a [routerLink]="['/places']"> see more</a></h5>
+          </div> <!-- end of places-tile div--> 
+        </div> <!-- end of second col div-->
+
+        <div class="col-sm-4 third">
+          <div id="quote-tile">
+            <app-quote></app-quote>
+          </div> <!-- end of quote-tile div--> 
+          <div id="notes-tile">
+             <h5>Your Notes <a [routerLink]="['/notes']"> see more</a></h5>
+          </div> <!-- end of notes-tile div--> 
+            
+            
+        </div> <!-- end of third col div-->
+
+
+    </div> <!-- end of all-apps-thumbs div-->
+
+</div> <!-- end of container div-->
 </div>
-
 
 

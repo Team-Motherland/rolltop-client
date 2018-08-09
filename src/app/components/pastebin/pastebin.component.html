@@ -1,19 +1,26 @@
-<p>
-  pastebin works!
-</p>
-
+<div class="allPage">
 <!-- Pastebin Upload -->
-<h3> Upload File </h3>
-<input type="file" (change)="selectFile($event)" placeholder="Upload file">
 
-<!-- Pastebin Downlaod -->
-<h3> File's Available </h3>
-<button (click)="getFileList()">getFiles</button>
+  <div class="bckgnd">
+    <div class="bin-content">
 
-<div *ngFor= "let file of fileList">
-      {{file}} 
-      <!-- <button (click)="downloadFile(file)"> Download </button> -->
-      <a href= "{{baseUrl}}/pastebin/5b6864faae6e9c42cc2bdeaf/{{file}}" download = "true"> Download File</a>
-      <br>
-      <!-- <a [routerLink]="['entries', oneEntry._id]">See Details</a> --> 
-  </div>
+  <h3> Upload File </h3>
+  <input type="file" (change)="selectFile($event)" placeholder="Upload file">
+
+  <!-- Pastebin Downlaod -->
+  <h3> File's Available </h3>
+  <button (click)="getFileList()">getFiles</button>
+
+  <div *ngFor= "let file of fileList">
+        {{file}} 
+        <!-- <button (click)="downloadFile(file)"> Download </button> -->
+        <a href= "{{baseUrl}}/pastebin/5b6864faae6e9c42cc2bdeaf/{{file}}" download = "true"> Download File</a>
+        <br>
+        <!-- <a [routerLink]="['entries', oneEntry._id]">See Details</a> --> 
+    </div>
+
+   </div> <!-- end of bin-content div-->
+
+  </div> <!-- end of bckgnd div-->
+</div>
+

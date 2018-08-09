@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  apiBase: 'https://rolltop-online.herokuapp.com'
 };
