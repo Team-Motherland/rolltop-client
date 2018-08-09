@@ -19,11 +19,12 @@
       </div>
       <div class="col-sm-6" [hidden]="!show">
           <app-new-note></app-new-note>
-          <h5><button class="btn btn-outline-info"(click)="showForm()"> Cancel</button></h5>
+          <button class="btn btn-outline-danger cancel"(click)="showForm()">Cancel</button>
       </div>
       <div class="col-sm-6" [hidden]="show">
-    
+          <img href="https://res.cloudinary.com/bestcloudever/image/upload/v1533842439/rolltop/notes.jpg">
       </div>
+      
 
     </div> <!-- end of mainContent div-->
   
