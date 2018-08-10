@@ -7,14 +7,12 @@
       <h3>Your Notes</h3>
       <h3 [hidden]="!show">Add a New Note</h3>
     </div>
-    <!-- <div class="row new-item" [hidden]="show">
-      
-    </div> -->
 
+    
     <div class="row mainContent">
       <div class="col-sm-3 all-notes">
         <ul *ngFor="let oneNote of allTheNotes">
-          <li><a [routerLink]="['/notes',oneNote._id]">{{ oneNote.title }}</a></li>
+          <li><a class="a-black"[routerLink]="['/notes',oneNote._id]">{{ oneNote.title }}</a></li>
         </ul>
       </div>
       <div class="col-sm-6" [hidden]="!show">
@@ -27,9 +25,7 @@
               <button class="btn btn-info btn-lg"(click)="showForm()"> Click Here</button>
           </div>    
       </div>
-         
-      
-      
+
 
     </div> <!-- end of mainContent div-->
   

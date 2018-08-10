@@ -6,6 +6,9 @@ body {
 
 }
 
+a {
+    color: #f6f6f6;
+}
 .allPage {
     padding: 15vh 10vw 10vh;
 }

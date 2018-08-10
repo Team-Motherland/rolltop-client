@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
 import { HttpModule } from '../../node_modules/@angular/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http'
 
 // components:
 import { AppComponent } from './app.component';
@@ -22,9 +23,6 @@ import { NewPlaceComponent } from './components/new-place/new-place.component';
 
 import { NewProjectComponent } from './components/toDoApplet/new-project/new-project.component';
 
-
-
-
 // routes:
 import {Routes, RouterModule} from '@angular/router';
 
@@ -33,9 +31,7 @@ import { AuthService } from './services/auth.service';
 import { NotesService } from './services/notes.service';
 import { QuoteService } from './services/quote.service';
 import { PlacesService } from './services/places.service';
-
 import { PastebinService } from './services/pastebin.service';
-import { HttpClientModule, HttpClient } from '@angular/common/http'
 
 
 //image upload
