@@ -16,7 +16,7 @@
         
      <div *ngIf="theUser.username" class="log-info">
         <h6>Logged in as</h6><h5>{{theUser.username}} </h5> 
-        <button (click)="logMeOut()">Log Out </button>
+        <button class="btn btn-outline-secondary" (click)="logMeOut()">Log Out </button>
         <p *ngIf="logoutError">
             {{ logoutError }}
         </p>

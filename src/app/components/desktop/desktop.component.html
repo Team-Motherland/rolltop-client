@@ -7,7 +7,11 @@
 
         <div class="col-sm-4 first">
           <div id="projects-tile">
-            <h5>Your Projects <a [routerLink]="['/todo']"> see more</a></h5>
+            <h5>Your Projects</h5>
+            <div *ngFor="let project of allTheProjects; let i =index">
+                <td *ngIf ="i>=allTheProjects.length -20"><a [routerLink]="['/todo',project._id]">{{project.title}}</a></td>
+             </div>
+             <a [routerLink]="['/todo']"> see more</a>
           </div>   <!-- end of projects-tile div--> 
         </div> <!-- end of first col div-->
 
@@ -17,7 +21,11 @@
             <a [routerLink]="['/pastebin']"> see more</a>
           </div><!-- end of pastebin-tile div--> 
           <div id="places-tile">
-            <h5>Your Places <a [routerLink]="['/places']"> see more</a></h5>
+            <h5>Your Places </h5>
+            <div *ngFor="let place of allThePlaces; let i =index">
+                <td *ngIf ="i>=allThePlaces.length -9"><a [routerLink]="['/places',place._id]">{{place.name}}</a></td>
+             </div>
+            <a [routerLink]="['/places']"> see more</a>
           </div> <!-- end of places-tile div--> 
         </div> <!-- end of second col div-->
 
@@ -28,7 +36,7 @@
           <div id="notes-tile">
              <h5>Your Notes</h5>
              <div *ngFor="let note of allTheNotes; let i =index">
-                <td *ngIf ="i>=allTheNotes.length -3"><a [routerLink]="['/notes',note._id]">{{note.title}}</a></td>
+                <td *ngIf ="i>=allTheNotes.length -5"><a [routerLink]="['/notes',note._id]">{{note.title}}</a></td>
              </div>
              <a [routerLink]="['/notes']"> see more</a>
           </div> <!-- end of notes-tile div--> 
