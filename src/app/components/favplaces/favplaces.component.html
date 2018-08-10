@@ -1,8 +1,10 @@
 <div *ngIf="theUser.username" class="allPage">
   <h3>Your Favorite Places</h3>
   
-  <h5 *ngIf="theUser.username">Create a new fav place entry<a [routerLink]="['/places/new']"> Click Here</a></h5>
-  
+  <div class="row" id="newPlace">
+  <h5>Create a new fav place entry</h5>
+  <a class="btn btn-outline-light" [routerLink]="['/places/new']"> Click Here</a>
+  </div>
   
   <div id="all-places-thumbs">
  

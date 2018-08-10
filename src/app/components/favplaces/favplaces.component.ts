@@ -32,33 +32,14 @@ export class FavplacesComponent implements OnInit {
 
 
   showPlaceList(){
-    // let dineCat: any =[];
-    // let serviceCat: any =[];
-    // let retailCat: any =[];
-    // let privateCat: any =[];
+
     this.myPlacesService.getAllPlaces()
     .subscribe( allPlaces => {
       this.allThePlaces = allPlaces;
-      //  let dineCat = allPlaces.filter(item =>{
-      //   return item.category.indexOf("dining") > -1
-      // })
 
     },
     () => this.listError = 'Sorry! No fav places! Something went bad on the backend route!')
   }
-
-
-  // logMeOut() {
-  //   this.myAuthService
-  //     .logout()
-  //     .then(() => {
-  //       this.myRouter.navigate(["/"]);
-  //     })
-  //     .catch(() => {
-  //       this.logoutError = "Log out went bad.";
-  //     });
-  // } // close logMeOut()
-
 
 
 }

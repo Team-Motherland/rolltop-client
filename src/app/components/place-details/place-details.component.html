@@ -1,16 +1,21 @@
-  <div [hidden]="!show">
+<div class="allPage">
+        <div class="pageContent">
+
+   <a [routerLink]="['/places']">Go back to the list of places</a>         
+  
+  <div class="oneEntry" [hidden]="!show">
     <h3>{{place.name}}</h3> 
     <hr>
-    <h5>{{place.category}}</h5> 
+    <h5 class="text-right">{{place.category}}</h5> 
     <hr>
     <p>{{place.notes}}</p>
-  </div>
-  
-  <button *ngIf="place._id" (click)="deleteThisPlace()">DELETE</button>
-  <button *ngIf="place._id" (click)="editPlace()">EDIT</button>
+    <hr>
+  <div class="row">
+  <button class="btn btn-outline-danger" *ngIf="place._id" (click)="deleteThisPlace()">DELETE</button>
+  <button class="btn btn-outline-primary" *ngIf="place._id" (click)="editPlace()">EDIT</button>
+  </div>  
+</div>
 
-  <a [routerLink]="['/places']">Go back to the list of places</a>
-  <hr>
 
   <!-- note update area -->
 
@@ -45,3 +50,6 @@
     <br>
     <button>Save updates</button>
 </form> 
+
+</div>
+</div>
