@@ -9,12 +9,10 @@ import { TodoService } from '../../../services/todo.service';
   styleUrls: ['./show-project-info.component.css']
 })
 export class ShowProjectInfoComponent implements OnInit {
-
-  project : {
-    title: "",
-    description: "",
-    closed: ""
-  };
+  // title: "",
+  // description: "",
+  // closed: ""
+  project :any =  {};
 
   listError: String = '';
   id:Number = 0;
